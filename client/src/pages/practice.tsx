@@ -9,8 +9,9 @@ import TestTimer from "@/components/test/test-timer";
 import { api } from "@/lib/api";
 import { useToast } from "@/hooks/use-toast";
 import type { TestQuestion } from "@shared/schema";
+import ChatInterface from "../components/chatbot/practice-chat-interface"
 
-export default function DailyTest() {
+export default function PracticeTest() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, any>>({});
   const [isTestStarted, setIsTestStarted] = useState(false);
@@ -20,8 +21,8 @@ export default function DailyTest() {
   const queryClient = useQueryClient();
 
   const { data: questions, isLoading } = useQuery<TestQuestion[]>({
-    queryKey: ["test-questions", "daily"],
-    queryFn: () => api.test.getTestQuestions("daily"),
+    queryKey: ["test-questions", "practice"],
+    queryFn: () => api.test.getTestQuestions("practice"),
     enabled: isTestStarted,
   });
   const submitTestMutation = useMutation({
@@ -30,7 +31,7 @@ export default function DailyTest() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["test-attempts", 1] });
       toast({
-        title: "Test Completed",
+        title: "Practice Test Completed",
         description: "Your test has been submitted successfully",
       });
     },
@@ -98,7 +99,7 @@ export default function DailyTest() {
     
     submitTestMutation.mutate({
       userId: 1,
-      testType: "daily",
+      testType: "practice",
       score: calculatedScore,
       totalQuestions: questions.length,
     });
@@ -112,7 +113,7 @@ export default function DailyTest() {
     return (
       <div>
         <Topbar
-          title="Daily Test"
+          title="Practice Test"
           subtitle="Quick 15-minute assessment to test your knowledge"
         />
         
@@ -121,7 +122,7 @@ export default function DailyTest() {
             <Card>
               <CardContent className="p-8 text-center">
                 <h2 className="text-2xl font-semibold text-slate-800 mb-4">
-                  Ready for your Daily Test?
+                  Ready for your Practice Test?
                 </h2>
                 <p className="text-slate-600 mb-6">
                   This test contains multiple choice, multiple select, and numerical answer type questions.
@@ -157,7 +158,7 @@ export default function DailyTest() {
   if (isLoading) {
     return (
       <div>
-        <Topbar title="Daily Test" />
+        <Topbar title="Practice Test" />
         <main className="p-6">
           <div className="max-w-4xl mx-auto">
             <Card>
@@ -176,7 +177,7 @@ export default function DailyTest() {
     
     return (
       <div>
-        <Topbar title="Daily Test" subtitle="Test completed!" />
+        <Topbar title="Practice Test" subtitle="Test completed!" />
         
         <main className="p-6">
           <div className="max-w-2xl mx-auto">
@@ -211,7 +212,7 @@ export default function DailyTest() {
   if (!questions?.length) {
     return (
       <div>
-        <Topbar title="Daily Test" />
+        <Topbar title="Practice Test" />
         <main className="p-6">
           <div className="max-w-4xl mx-auto">
             <Card>
@@ -231,7 +232,7 @@ export default function DailyTest() {
   return (
     <div>
       <Topbar
-        title="Daily Test"
+        title="Practice Test"
         subtitle={`Question ${currentQuestionIndex + 1} of ${questions.length}`}
       />
       
@@ -298,6 +299,7 @@ export default function DailyTest() {
             </div>
           </div>
         </div>
+        <ChatInterface chatId="practice_chat"/>
       </main>
     </div>
   );

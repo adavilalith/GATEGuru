@@ -11,6 +11,7 @@ import type {
   InsertTestAttempt,
   InsertChatMessage,
 } from "@shared/schema";
+import questions from './corrected_data.json';
 
 const MONGODB_URI =
   "mongodb+srv://lalithadavi:lalithadavi@cluster0.6ixze.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -32,6 +33,7 @@ class MongoDatabase {
 
       // Initialize collections with sample data if they're empty
       await this.initializeCollections();
+      console.log("initialized database")
     } catch (error) {
       console.error("MongoDB connection error:", error);
       throw error;
@@ -60,6 +62,7 @@ class MongoDatabase {
       const count = await collection.countDocuments();
 
       if (count === 0) {
+        console.log("seeing ", collectionName);
         await this.seedCollection(collectionName, collection);
       }
     }
@@ -138,56 +141,57 @@ class MongoDatabase {
         break;
 
       case "questions":
-        await collection.insertMany([
-          {
-            numericId: 1,
-            type: "mcq",
-            question: "What is the time complexity of binary search?",
-            options: ["O(n)", "O(log n)", "O(n²)", "O(1)"],
-            correctAnswer: "O(log n)",
-            difficulty: "easy",
-            subject: "Algorithms",
-            testType: "daily",
-          },
-          {
-            numericId: 2,
-            type: "msq",
-            question:
-              "Which of the following are sorting algorithms? (Select all that apply)",
-            options: [
-              "Quick Sort",
-              "Binary Search",
-              "Merge Sort",
-              "Linear Search",
-            ],
-            correctAnswer: ["Quick Sort", "Merge Sort"],
-            difficulty: "medium",
-            subject: "Algorithms",
-            testType: "daily",
-          },
-          {
-            numericId: 3,
-            type: "nat",
-            question:
-              "How many edges are there in a complete graph with 5 vertices?",
-            options: null,
-            correctAnswer: "10",
-            difficulty: "medium",
-            subject: "Graph Theory",
-            testType: "daily",
-          },
-          {
-            numericId: 4,
-            type: "mcq",
-            question:
-              "Which data structure is used for implementing recursion?",
-            options: ["Queue", "Stack", "Array", "Linked List"],
-            correctAnswer: "Stack",
-            difficulty: "easy",
-            subject: "Data Structures",
-            testType: "weekly",
-          },
-        ]);
+        await collection.insertMany(questions)
+        // await collection.insertMany([
+        //   {
+        //     numericId: 1,
+        //     type: "mcq",
+        //     question: "What is the time complexity of binary search?",
+        //     options: ["O(n)", "O(log n)", "O(n²)", "O(1)"],
+        //     correctAnswer: "O(log n)",
+        //     difficulty: "easy",
+        //     subject: "Algorithms",
+        //     testType: "daily",
+        //   },
+        //   {
+        //     numericId: 2,
+        //     type: "msq",
+        //     question:
+        //       "Which of the following are sorting algorithms? (Select all that apply)",
+        //     options: [
+        //       "Quick Sort",
+        //       "Binary Search",
+        //       "Merge Sort",
+        //       "Linear Search",
+        //     ],
+        //     correctAnswer: ["Quick Sort", "Merge Sort"],
+        //     difficulty: "medium",
+        //     subject: "Algorithms",
+        //     testType: "daily",
+        //   },
+        //   {
+        //     numericId: 3,
+        //     type: "nat",
+        //     question:
+        //       "How many edges are there in a complete graph with 5 vertices?",
+        //     options: null,
+        //     correctAnswer: "10",
+        //     difficulty: "medium",
+        //     subject: "Graph Theory",
+        //     testType: "daily",
+        //   },
+        //   {
+        //     numericId: 4,
+        //     type: "mcq",
+        //     question:
+        //       "Which data structure is used for implementing recursion?",
+        //     options: ["Queue", "Stack", "Array", "Linked List"],
+        //     correctAnswer: "Stack",
+        //     difficulty: "easy",
+        //     subject: "Data Structures",
+        //     testType: "weekly",
+        //   },
+        // ]);
         break;
     }
   }

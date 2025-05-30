@@ -4,10 +4,14 @@ import { setupVite, serveStatic, log } from "./vite";
 import { database } from "./database";
 
 const app = express();
+console.log("1. App initialized."); // Debug log
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+console.log("2. JSON and URL-encoded parsers added."); // Debug log
 
 app.use((req, res, next) => {
+  console.log(`3. Custom logging middleware hit for path: ${req.path}`); // Debug log
   const start = Date.now();
   const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
@@ -30,14 +34,15 @@ app.use((req, res, next) => {
         logLine = logLine.slice(0, 79) + "…";
       }
 
-      log(logLine);
+      log(logLine); // This is your existing logger
     }
   });
 
-  next();
+  next(); // Continue to next middleware/route
 });
 
 (async () => {
+  console.log("4. Async IIFE started."); // Debug log
   // Connect to MongoDB before starting the server
   try {
     await database.connect();
@@ -47,22 +52,30 @@ app.use((req, res, next) => {
     process.exit(1);
   }
 
-  const server = await registerRoutes(app);
+  console.log("5. About to register routes."); // Debug log
+  const server = await registerRoutes(app); // THIS IS WHERE YOUR ROUTES ARE ADDED
+  console.log("6. Routes registered."); // Debug log
 
+  // Global error handler - should be after all routes
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    console.error("7. Global Error Handler Caught:", err); // Debug log (this should catch errors if Multer passes one)
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
 
+    if (res.headersSent) {
+      return _next(err);
+    }
     res.status(status).json({ message });
-    throw err;
   });
 
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    console.log("8. Setting up Vite for development."); // Debug log
     await setupVite(app, server);
   } else {
+    console.log("8. Serving static files."); // Debug log
     serveStatic(app);
   }
 
@@ -77,7 +90,7 @@ app.use((req, res, next) => {
       reusePort: true,
     },
     () => {
-      log(`serving on port ${port}`);
+      log(`9. Serving on port ${port}`); // Your existing log
     },
   );
 })();

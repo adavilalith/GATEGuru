@@ -6,17 +6,46 @@ import {
   insertTestAttemptSchema,
   insertChatMessageSchema,
 } from "@shared/schema";
+import { generateGeminiResponseWithHistory } from "./gemini";
+import multer from 'multer';
 
+// --- CONFIGURE MULTER FOR DISK STORAGE ---
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      // Set the destination folder for uploads
+      // This path is relative to where your Node.js process starts (project root)
+      cb(null, 'uploads/chat-images');
+    },
+    filename: (req, file, cb) => {
+      // Create a unique filename to prevent collisions
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+      const fileExtension = file.originalname.split('.').pop();
+      // Ensure the filename is safe for file systems
+      cb(null, `${file.fieldname}-${uniqueSuffix}.${fileExtension}`);
+    }
+  }),
+  limits: { fileSize: 10 * 1024 * 1024 }, // Max file size 10MB
+  fileFilter: (req, file, cb) => {
+    const allowedMimes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (allowedMimes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Invalid file type. Only JPEG, PNG, GIF, and WebP are allowed.'));
+    }
+  }
+});
 export async function registerRoutes(app: Express): Promise<Server> {
+
   // User routes
   app.get("/api/user/:id", async (req, res) => {
     try {
       const userId = parseInt(req.params.id);
-      const user = await storage.getUser(userId);
+      const user =
+       await storage.getUser(userId);
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
-      // Don't send password
       const { password, ...userWithoutPassword } = user;
       res.json(userWithoutPassword);
     } catch (error) {
@@ -86,7 +115,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/test/:testType/questions", async (req, res) => {
     try {
       const testType = req.params.testType;
-      console.log("testType: ", testType);
       const limit = parseInt(req.query.limit as string) || 10;
       const questions = await storage.getTestQuestions("daily", limit);
       res.json(questions);
@@ -116,51 +144,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Chat routes
-  app.get("/api/chat/history/:userId", async (req, res) => {
+  app.get("/api/chat/history", async (req, res) => {
+    console.log("hi from chat history")
+
     try {
-      const userId = parseInt(req.params.userId);
-      const history = await storage.getChatHistory(userId);
+      const userId = parseInt(req.query.userId as string);
+      const chatId = req.query.chatId as string;
+      const history = await storage.getChatHistory(userId, chatId);
+
       res.json(history);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch chat history" });
     }
   });
 
+  // --- THIS IS THE CORRECTLY SEPARATED CHAT MESSAGE ROUTE ---
   app.post("/api/chat", async (req, res) => {
     try {
-      const { userId, message } = req.body;
+      const { chatId, userId, message, uploadedImageUrl } = req.body;
 
-      // Simple chatbot response logic
-      let response = "I'm here to help you with your studies! ";
+      const history = await storage.getChatHistory(userId, chatId);
 
-      const lowerMessage = message.toLowerCase();
-      if (lowerMessage.includes("test") || lowerMessage.includes("exam")) {
-        response +=
-          "For test preparation, I recommend reviewing your notes, practicing sample questions, and managing your time effectively during the test.";
-      } else if (
-        lowerMessage.includes("math") ||
-        lowerMessage.includes("mathematics")
-      ) {
-        response +=
-          "Mathematics can be challenging! Break down complex problems into smaller steps, practice regularly, and don't hesitate to ask for help when needed.";
-      } else if (
-        lowerMessage.includes("study") ||
-        lowerMessage.includes("learning")
-      ) {
-        response +=
-          "Effective studying involves active learning techniques like summarizing, creating flashcards, and teaching the material to someone else.";
-      } else if (
-        lowerMessage.includes("schedule") ||
-        lowerMessage.includes("time")
-      ) {
-        response +=
-          "Time management is crucial for academic success. Try creating a study schedule, setting specific goals, and taking regular breaks.";
-      } else {
-        response +=
-          "That's an interesting question! Could you provide more details so I can give you a more specific answer?";
-      }
+      const response = await generateGeminiResponseWithHistory(message, history,uploadedImageUrl);
 
       const chatData = insertChatMessageSchema.parse({
+        chatId,
         userId,
         message,
         response,
@@ -172,6 +180,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(400).json({ message: "Invalid chat message data" });
     }
   });
+
+  app.post("/api/chat/uploadImage",  upload.single('image'), async (req, res) => {
+    try {
+      console.log("hi from /chat/upload-image");
+
+      // The uploaded file information is now in req.file
+      const uploadedFile = req.file;
+
+      if (!uploadedFile) {
+        console.log("no file");
+        return res.status(400).json({ error: 'No file uploaded or invalid file type.' });
+      }
+
+      // The path will be relative to your server's root (e.g., 'uploads/chat-images/filename.jpg')
+      const filePath = uploadedFile.path;
+      const fileName = uploadedFile.filename;
+      const originalName = uploadedFile.originalname;
+
+      console.log('File uploaded to local storage:', filePath);
+
+      // --- IMPORTANT: SERVE STATIC FILES ---
+      // For the frontend to access these images, you need to serve them statically.
+      // Add this line in your index.ts (or where you configure your main Express app)
+      // app.use('/uploads', express.static('uploads'));
+      // Then the URL for the frontend would be like /uploads/chat-images/your-image.jpg
+
+      res.status(201).json({
+        message: 'Image uploaded successfully to local storage',
+        fileName: fileName,
+        originalName: originalName,
+        filePath: filePath, // Full path on the server (for debugging/logging)
+        url: `/uploads/chat-images/${fileName}`, // URL for the frontend to access the image
+      });
+
+  } catch (error) {
+    console.error('Error uploading image to local storage:', error);
+    res.status(400).json({ message: "Failed to upload image or invalid data" });
+  }
+});
+  
 
   const httpServer = createServer(app);
   return httpServer;

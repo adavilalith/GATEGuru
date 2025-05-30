@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { BookOpen, Home, MessageCircle, Clock, Calendar } from "lucide-react";
+import { BookOpen, Home, MessageCircle, Clock, Calendar, Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Sidebar() {
@@ -15,6 +15,10 @@ export default function Sidebar() {
       name: "AI Assistant",
       href: "/chatbot",
       icon: MessageCircle,
+    },{
+      name:"Practice",
+      href:"/practice-test",
+      icon: Pencil,
     },
     {
       name: "Daily Test",
@@ -26,6 +30,7 @@ export default function Sidebar() {
       href: "/weekly-test",
       icon: Calendar,
     },
+
   ];
 
   return (

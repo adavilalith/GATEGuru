@@ -72,7 +72,7 @@ export default function WeeklyTest() {
       const userAnswer = answers[index];
       const correctAnswer = question.correctAnswer;
       
-      if (question.type === "msq") {
+      if (question.type === "MSQ") {
         // For MSQ, check if arrays match
         const userAnswerArray = Array.isArray(userAnswer) ? userAnswer.sort() : [];
         const correctAnswerArray = Array.isArray(correctAnswer) ? correctAnswer.sort() : [];

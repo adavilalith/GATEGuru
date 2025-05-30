@@ -19,7 +19,24 @@ import {
 import { database } from "./database";
 
 // MongoDB Storage Implementation
-export class MongoStorage implements IStorage {
+export class MongoStorage implements Storage {
+  [name: string]: any;
+  length: any;
+  clear(): void {
+    throw new Error("Method not implemented.");
+  }
+  getItem(key: string): string | null {
+    throw new Error("Method not implemented.");
+  }
+  key(index: number): string | null {
+    throw new Error("Method not implemented.");
+  }
+  removeItem(key: string): void {
+    throw new Error("Method not implemented.");
+  }
+  setItem(key: string, value: string): void {
+    throw new Error("Method not implemented.");
+  }
   async getUser(id: number): Promise<User | undefined> {
     const user = await database.collection("users").findOne({ numericId: id });
     if (!user) return undefined;
@@ -156,18 +173,20 @@ export class MongoStorage implements IStorage {
     testType: string,
     limit: number = 10,
   ): Promise<TestQuestion[]> {
+    let question_type="MCQ";
     const questions = await database
       .collection("questions")
-      .find({ testType })
-      .limit(limit)
+      .aggregate([
+        { $sample: { size: limit } }
+      ])
       .toArray();
-
+    console.log(questions)
     return questions.map((question) => ({
       id: question.numericId,
-      type: question.type,
-      question: question.question,
-      options: question.options,
-      correctAnswer: question.correctAnswer,
+      type: question.question_type,
+      question: question.question_text,
+      options: question.choices,
+      correctAnswer: question.answer,
       difficulty: question.difficulty || null,
       subject: question.subject || null,
       testType: question.testType,
@@ -212,18 +231,23 @@ export class MongoStorage implements IStorage {
     }));
   }
 
-  async getChatHistory(userId: number): Promise<ChatMessage[]> {
+  async getChatHistory(userId: number,chatId:string): Promise<ChatMessage[]> {
     const messages = await database
       .collection("chats")
-      .find({ userId })
+      .find({ 
+        userId:userId, 
+        chatId:chatId 
+      })
       .sort({ createdAt: 1 })
       .toArray();
-
+    
     return messages.map((message) => ({
+      chatId: message.chatId,
       id: message.numericId,
       userId: message.userId,
       message: message.message,
       response: message.response,
+      imageUrl: "",
       createdAt: message.createdAt || null,
     }));
   }
@@ -237,6 +261,7 @@ export class MongoStorage implements IStorage {
     const message = {
       numericId: newId,
       ...insertMessage,
+      imageUrl:"",
       createdAt: new Date(),
     };
 
@@ -245,6 +270,7 @@ export class MongoStorage implements IStorage {
     return {
       id: newId,
       ...insertMessage,
+      imageUrl:"",
       createdAt: new Date(),
     };
   }

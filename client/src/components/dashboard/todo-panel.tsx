@@ -131,7 +131,7 @@ export default function TodoPanel() {
               className="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 transition-colors duration-200"
             >
               <Checkbox
-                checked={todo.completed}
+                checked={todo.completed||false}
                 onCheckedChange={() => toggleTodo(todo)}
                 className="mt-1"
               />

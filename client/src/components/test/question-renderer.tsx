@@ -25,20 +25,24 @@ export default function QuestionRenderer({
 }: QuestionRendererProps) {
   const getQuestionTypeBadge = () => {
     const badges = {
-      mcq: { label: "MCQ", className: "bg-blue-100 text-blue-800" },
-      msq: { label: "MSQ", className: "bg-green-100 text-green-800" },
-      nat: { label: "NAT", className: "bg-purple-100 text-purple-800" },
+      MCQ: { label: "MCQ", className: "bg-blue-100 text-blue-800" },
+      MSQ: { label: "MSQ", className: "bg-green-100 text-green-800" },
+      NAT: { label: "NAT", className: "bg-purple-100 text-purple-800" },
     };
     const badge = badges[question.type as keyof typeof badges];
     return (
       <Badge className={badge.className}>
+      {/* <Badge className={"bg-blue-100 text-blue-800"}> */}
         {badge.label}
+        {/* {"MCQ"} */}
       </Badge>
     );
   };
 
   const renderMCQ = () => {
     const options = question.options as string[];
+    console.log(question)
+
     return (
       <RadioGroup
         value={currentAnswer || ""}
@@ -101,11 +105,11 @@ export default function QuestionRenderer({
 
   const renderQuestion = () => {
     switch (question.type) {
-      case "mcq":
+      case "MCQ":
         return renderMCQ();
-      case "msq":
+      case "MSQ":
         return renderMSQ();
-      case "nat":
+      case "NAT":
         return renderNAT();
       default:
         return <p>Unknown question type</p>;

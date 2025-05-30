@@ -1,0 +1,802 @@
+[
+  {
+    "question_id": "GATE-2025-CS-Q1",
+    "question_text": "Ravi had ______ younger brother who taught at ______ university. He was widely regarded as ______ honorable man. Select the option with the correct sequence of articles to fill in the blanks.",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "a; a; an",
+      "the; an; a",
+      "a; an; a",
+      "an; an; a"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q2",
+    "question_text": "The CEO’s decision to downsize the workforce was considered myopic because it sacrificed long-term stability to accommodate short-term gains. Select the most appropriate option that can replace the word “myopic” without changing the meaning of the sentence.",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "visionary",
+      "shortsighted",
+      "progressive",
+      "innovative"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q3",
+    "question_text": "The average marks obtained by a class in an examination were calculated as 30.8. However, one student’s marks were incorrectly entered as 24 instead of 42. After correction, the average became 31.4. How many students does the class have?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "25",
+      "28",
+      "30",
+      "32"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q4",
+    "question_text": "Consider the relationships among P, Q, R, S, and T:\n• P is the brother of Q.\n• S is the daughter of Q.\n• T is the sister of S.\n• R is the mother of Q.\nWhich of the following statements is/are true?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Both (1) and (2) are true.",
+      "Both (1) and (3) are true.",
+      "Only (3) is true.",
+      "Only (4) is true."
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q5",
+    "question_text": "According to the map shown in the figure, which one of the following statements is correct?",
+    "question_type": "MCQ",
+    "answer": "D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "The library is located to the northwest of the canteen.",
+      "The hospital is located to the east of the chemistry lab.",
+      "The chemistry lab is to the southeast of physics lab.",
+      "The classrooms and canteen are next to each other."
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q6",
+    "question_text": "Based on the G.K. Chesterton passage, which one of the following statements is true?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "The author of the passage carries a mirror in his pocket to reflect upon things.",
+      "The author of the passage had decided to write a poem on epics.",
+      "The pocket-knife is described as the infant of the sword.",
+      "Epics are described as too inconvenient to write."
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q7",
+    "question_text": "In the diagram, lines QR and ST are parallel. The shortest distance between them is half the shortest distance between point P and line QR. What is the ratio of the area of triangle PST to trapezium SQRT?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "1/3",
+      "1/4",
+      "2/5",
+      "1/2"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q8",
+    "question_text": "A fair six-faced dice is rolled thrice. What is the probability of rolling ‘6’ exactly once?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "75/216",
+      "1/6",
+      "1/18",
+      "25/216"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q9",
+    "question_text": "A square paper is folded and cut as shown in a series of figures. Which pattern will be obtained when the paper is unfolded?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Pattern A",
+      "Pattern B",
+      "Pattern C",
+      "Pattern D"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q10",
+    "question_text": "A shop has 4 distinct flavors of ice-cream. One can purchase any number of scoops of any flavor. The order doesn't matter. In how many ways can one purchase 3 scoops?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "4",
+      "20",
+      "24",
+      "48"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q11",
+    "question_text": "Suppose a program is running on a non-pipelined single processor system. An interrupt arrives. The steps are: (i) save the content of the program counter, (ii) load PC with ISR address, (iii) finish current instruction. What is the correct order?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "(iii), (i), (ii)",
+      "(i), (iii), (ii)",
+      "(i), (ii), (iii)",
+      "(iii), (ii), (i)"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q12",
+    "question_text": "Which ONE of the following statements is FALSE regarding the symbol table?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Symbol table is responsible for keeping track of the scope of variables.",
+      "Symbol table can be implemented using a binary search tree.",
+      "Symbol table is not required after the parsing phase.",
+      "Symbol table is created during the lexical analysis phase."
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q13",
+    "question_text": "Which ONE of the following compiler optimization techniques uses live variable analysis?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Run-time function call management",
+      "Register assignment to variables",
+      "Strength reduction",
+      "Constant folding"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q14",
+    "question_text": "Consider a demand paging system with 32-bit logical address, 20-bit physical address, and 2048-byte page size. What is the max number of entries in the page table?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "2^21",
+      "2^20",
+      "2^22",
+      "2^24"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q15",
+    "question_text": "A schedule of 3 transactions T1, T2, T3 is shown. T1 aborts. Which other transaction(s) must be rolled back? R1(X) W1(Y) R2(X) R2(Y) R3(Y) ABORT(T1)",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Only T2",
+      "Only T3",
+      "Both T2 and T3",
+      "Neither T2 nor T3"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q16",
+    "question_text": "Match OSI layers with functionalities: (a) Network layer, (b) Transport layer, (c) Datalink layer. (I) Packet routing, (II) Framing and error handling, (III) Host to host communication.",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "(a)-(I), (b)-(II), (c)-(III)",
+      "(a)-(I), (b)-(III), (c)-(II)",
+      "(a)-(II), (b)-(I), (c)-(III)",
+      "(a)-(III), (b)-(II), (c)-(I)"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q17",
+    "question_text": "g(.) maps A→B, f(.) maps B→C, f(g(.)) is from A→C. If f and f∘g are onto, what can be said about g?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "g must be onto (surjective)",
+      "g must be one-to-one (injective)",
+      "g must be bijective",
+      "g need not be one-to-one or onto"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q18",
+    "question_text": "Let G be a weighted undirected graph and T its MST. For vertices u and v, d1(u,v) is shortest path in G, d2(u,v) in T. Which is always true?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "d1(u,v) = d2(u,v)",
+      "d1(u,v) ≤ d2(u,v)",
+      "d1(u,v) ≥ d2(u,v)",
+      "d1(u,v) ≠ d2(u,v)"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q19",
+    "question_text": "Given CFG: S → aaB | Abb, A → a | aA, B → b | bB. What language is generated?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "L = {a²bⁿ | n ≥ 1} ∪ {aⁿb² | n ≥ 1}",
+      "L = {aⁿb²ⁿ | n ≥ 1} ∪ {a²ⁿbⁿ | n ≥ 1}",
+      "L = {aⁿbⁿ | n ≥ 1}",
+      "L = {a²ⁿb²ⁿ | n ≥ 1}"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q20",
+    "question_text": "Given recurrence T(n) = 2T(n−1) + n·2ⁿ for n>0 and T(0)=1, what is T(n)?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Θ(n²·2ⁿ)",
+      "Θ(n·2ⁿ)",
+      "Θ((log n)²·2ⁿ)",
+      "Θ(4ⁿ)"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q21",
+    "question_text": "A B+ tree with 5 nodes (max 3 keys per node) is given. The value 23 is inserted. Which of the following is/are correct?",
+    "question_type": "MSQ",
+    "answer": "B D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "None of the nodes will split.",
+      "At least one node will split and redistribute.",
+      "The total number of nodes will remain same.",
+      "The height of the tree will increase."
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q22",
+    "question_text": "Consider the 3-way TCP handshake: packets P1, P2, P3. Which TCP flags are set?",
+    "question_type": "MSQ",
+    "answer": "B D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "P3: SYN = 1, ACK = 1",
+      "P2: SYN = 1, ACK = 1",
+      "P2: SYN = 0, ACK = 1",
+      "P1: SYN = 1"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q23",
+    "question_text": "System of linear equations:\nx + ky = 1\nkx + y = -1\nWhich of the following is/are correct?",
+    "question_type": "MSQ",
+    "answer": "A D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Exactly one k for which no solution exists",
+      "Infinite k for which no solution exists",
+      "Exactly one k for which unique solution exists",
+      "Exactly one k for which infinite solutions exist"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q24",
+    "question_text": "Let X be a 3-variable Boolean function outputting 1 when at least two inputs are 1. Which statements are correct?",
+    "question_type": "MSQ",
+    "answer": "A B D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "X(a, b, X(c, d, e)) = X(X(a, b, c), d, e)",
+      "X(a, b, X(a, b, c)) = X(a, b, c)",
+      "X(a, b, X(a, c, d)) = (X(a, b, a) AND X(c, d, c))",
+      "X(a, b, c) = X(a, X(a, b, c), X(a, c, c))"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q25",
+    "question_text": "−6 is 1010 in 4-bit 2's complement. Which are valid 8-bit/16-bit 2's complement forms of −6?",
+    "question_type": "MSQ",
+    "answer": "B D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "10001010 in 8-bits",
+      "11111010 in 8-bits",
+      "1000000000001010 in 16-bits",
+      "1111111111111010 in 16-bits"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q26",
+    "question_text": "Which of the following are TRUE for any binary search tree (BST) with n distinct integers?",
+    "question_type": "MSQ",
+    "answer": "A B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Max length of path from root to node is (n−1)",
+      "Inorder traversal gives sorted sequence",
+      "Worst-case find takes O(log₂ n)",
+      "Every BST is a Min-Heap"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q27",
+    "question_text": "A partial data path with RA, RB, and RZ is shown. Which statements are correct about arithmetic ops?",
+    "question_type": "MSQ",
+    "answer": "A B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Can do arithmetic using two registers",
+      "Can do arithmetic with one reg and one immediate",
+      "Can do arithmetic with two immediate values",
+      "Only one reg and one immediate arithmetic supported"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q28",
+    "question_text": "A regular language L is accepted by an NFA with n states. Which statements are FALSE?",
+    "question_type": "MSQ",
+    "answer": "B D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "L may have NFA with < n states",
+      "L may have DFA with < n states",
+      "There exists DFA with ≤ 2ⁿ states",
+      "Every DFA for L has > 2ⁿ states"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q29",
+    "question_text": "In a C program, a process requests I/O in a loop. How many times will it enter the ready queue?",
+    "question_type": "NAT",
+    "answer": "40",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q30",
+    "question_text": "How many ternary strings of length 5 over {a, b, c} contain at least one instance of two identical consecutive symbols (aa, bb, cc)?",
+    "question_type": "NAT",
+    "answer": "180",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q31",
+    "question_text": "Let f(x) = ax + b for x < 1 and f(x) = x^3 + x^2 + 1 for x ≥ 1. If f(x) is differentiable everywhere, what is the value of b (rounded to 1 decimal)?",
+    "question_type": "NAT",
+    "answer": "3.0",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q32",
+    "question_text": "A box contains 4 fair coins and 1 fake coin (P(head)=1). A coin is picked at random and tossed twice. Both results are heads. What is the probability that the chosen coin is fake (rounded to 2 decimal places)?",
+    "question_type": "NAT",
+    "answer": "0.38",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q33",
+    "question_text": "A function bubble sorts array A[0…29] in descending order. Initially, A contains 30 integers in descending order. How many swaps will be performed?",
+    "question_type": "NAT",
+    "answer": "435",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q34",
+    "question_text": "Output of C code:\nint *z;\nint a = 20, b = 25;\nz = &a;\nfoo(z,b);\nprintf(\"%d\",a);",
+    "question_type": "NAT",
+    "answer": "25",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q35",
+    "question_text": "A Min-Heap T stores 32 keys. What is the height of T?",
+    "question_type": "NAT",
+    "answer": "5",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q36",
+    "question_text": "Memory system has 1M bytes main memory, 16K cache, 16-byte block size, 20-bit address. Using direct mapping, how many bits are needed to store all tag values?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "6×2^10",
+      "8×2^10",
+      "2^12",
+      "2^14"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q37",
+    "question_text": "Processor has 64 registers, 50 instructions, 32-bit encoding. What is max number of bits available for immediate operand?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "16",
+      "20",
+      "22",
+      "24"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q38",
+    "question_text": "4 processes P1–P4 with given CPU bursts arrive together. Two CPUs M1 and M2 schedule them by priority. What is the average waiting time?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "9.00",
+      "8.75",
+      "6.50",
+      "7.50"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q39",
+    "question_text": "Relational calculus: Players (pid, pname, tid), Teams (tid, tname). Return names of players in team with tname = 'MI'.",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q40",
+    "question_text": "A packet with destination IP 145.36.109.70 arrives at a router. Based on the routing table shown, to which interface will it be forwarded?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "E3",
+      "E1",
+      "E2",
+      "E5"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q41",
+    "question_text": "Given matrix A = [[1,1],[1,-1]], what are the eigenvalues of A^13?",
+    "question_type": "MCQ",
+    "answer": "D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "1, -1",
+      "2√2, -2√2",
+      "4√2, -4√2",
+      "64√2, -64√2"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q42",
+    "question_text": "Given F(b3,b2,b1,b0) = Σ(0,2,4,8,10,11,12). What is the minimized Boolean expression?",
+    "question_type": "MCQ",
+    "answer": "A",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q43",
+    "question_text": "Graph G has 100 vertices. Max shortest path length d(u,v)=30. What can be said about BFS tree height?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Exactly 15",
+      "Exactly 30",
+      "At least 15",
+      "At least 30"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q44",
+    "question_text": "Languages L1 = αβα (α, β ∈ {a,b}^+), L2 = aaa…βαaaa… Which are regular?",
+    "question_type": "MCQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Both L1 and L2 regular",
+      "L1 regular, L2 not",
+      "L1 not, L2 regular",
+      "Neither L1 nor L2 regular"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q45",
+    "question_text": "Languages L1 = a^m b^m c^(m+n), L2 = a^m b^n c^(m+n). Which is context-free?",
+    "question_type": "MCQ",
+    "answer": "C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Both are CFLs",
+      "L1 is CFL, L2 is not",
+      "L1 not, L2 is CFL",
+      "Neither is CFL"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q46",
+    "question_text": "Which of the following are TRUE about computing First and Follow sets in top-down parsing?",
+    "question_type": "MSQ",
+    "answer": "A D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "ε added to First(A) for A → ε",
+      "Right end marker added to First(S)",
+      "ε added to Follow(A) for A → ε",
+      "Right end marker added to Follow(S)"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q47",
+    "question_text": "Schema team(name, city, owner), with FDs: name→city, name→owner. Decomposed to t1(name, city), t2(name, owner). Which is/are true?",
+    "question_type": "MSQ",
+    "answer": "A B C",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "team not in BCNF",
+      "t1 and t2 are in BCNF",
+      "decomposition is lossless",
+      "team not in 3NF"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q48",
+    "question_text": "Which of the following predicate logic formulae correctly represent: 'Everyone has exactly one mother'?",
+    "question_type": "MSQ",
+    "answer": "B D",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q49",
+    "question_text": "Let A = {0, 1, 2,…}. Let F be set of functions from A to A. Define (f1 ⨀ f2)(n) = f1(n) + f2(n). What is (F, ⨀)?",
+    "question_type": "MSQ",
+    "answer": "B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "(F, ⨀) is an Abelian group",
+      "(F, ⨀) is an Abelian monoid",
+      "(F, ⨀) is a non-Abelian group",
+      "(F, ⨀) is a non-Abelian monoid"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q50",
+    "question_text": "A DFA over {a,b} is shown. Which language(s) does it accept?",
+    "question_type": "MSQ",
+    "answer": "A B",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": [
+      "Strings with even number of b’s",
+      "Strings containing pattern bab",
+      "Strings ending with bab",
+      "Strings not containing aba"
+    ]
+  },
+  {
+    "question_id": "GATE-2025-CS-Q51",
+    "question_text": "A 1MB file is stored using linked allocation on a 512MB disk with 64KB blocks. Each block reserves 4 bytes for a pointer. How much space is wasted due to internal fragmentation? (Answer in bytes)",
+    "question_type": "NAT",
+    "answer": "61440",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q52",
+    "question_text": "Given a 3-address code snippet with line numbers, how many basic blocks are present?",
+    "question_type": "NAT",
+    "answer": "6",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q53",
+    "question_text": "In a memory hierarchy with L1, L2 cache and main memory, each with given hit rates and access times, compute average memory access time (in ns, rounded to 2 decimal places).",
+    "question_type": "NAT",
+    "answer": "6.50",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q54",
+    "question_text": "A modified optimal page replacement algorithm predicts only next 4 references. Given a sequence of page accesses and 3 empty memory frames, how many page faults will occur?",
+    "question_type": "NAT",
+    "answer": "7",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q55",
+    "question_text": "Given database tables and an SQL query to select minimum age of players in a team coached by Mark, what value will the query return?",
+    "question_type": "NAT",
+    "answer": "19",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q56",
+    "question_text": "A 5-bit message is sent over a noisy channel. Each bit has a 0.01 chance of flipping. What is the probability it is delivered error-free? (rounded to 3 decimal places)",
+    "question_type": "NAT",
+    "answer": "0.951",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q57",
+    "question_text": "An IPv4 packet of size 15000 bytes is fragmented over two routers with MTU limits. What is the number of fragments received by the destination?",
+    "question_type": "NAT",
+    "answer": "8",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q58",
+    "question_text": "Given a probability density function P(x) = Cx² over [1,4], compute the probability P(2 ≤ x ≤ 3) (rounded to 3 decimal places).",
+    "question_type": "NAT",
+    "answer": "0.481",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q59",
+    "question_text": "A finite state machine (FSM) is described using a state transition table. What is the minimum number of states required to realize the FSM?",
+    "question_type": "NAT",
+    "answer": "6",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q60",
+    "question_text": "Given a sequential circuit with D-Flip-Flops, determine the number of distinct states it goes through before returning to the initial state.",
+    "question_type": "NAT",
+    "answer": "6",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q61",
+    "question_text": "What value will be printed by the given C program that recursively counts non-equal adjacent elements in an array?",
+    "question_type": "NAT",
+    "answer": "5",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q62",
+    "question_text": "Two linked lists L1 and L2 are given. A loop in C removes nodes from L1 whose data is found in L2. How many nodes remain in L1 after the code executes?",
+    "question_type": "NAT",
+    "answer": "5",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q63",
+    "question_text": "Given a C program that processes digits of a number by alternating turns, what is the output of gate(14362)?",
+    "question_type": "NAT",
+    "answer": "362",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q64",
+    "question_text": "In a graph, what is the maximum value of x such that the edge (B, C) is always in the minimum spanning tree?",
+    "question_type": "NAT",
+    "answer": "6",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  },
+  {
+    "question_id": "GATE-2025-CS-Q65",
+    "question_text": "In a double hashing scheme with h1(k)=k mod 11, h2(k)=1+(k mod 7), keys are inserted in order: 63, 50, 25, 79, 67, 24. At what slot is key 24 stored?",
+    "question_type": "NAT",
+    "answer": "4",
+    "year": 2025,
+    "shift": "Set-1",
+    "choices": []
+  }
+]

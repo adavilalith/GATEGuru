@@ -9,6 +9,7 @@ import DailyTest from "@/pages/daily-test";
 import WeeklyTest from "@/pages/weekly-test";
 import NotFound from "@/pages/not-found";
 import Sidebar from "@/components/layout/sidebar";
+import PracticeTest from "./pages/practice";
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
           <Route path="/" component={Dashboard} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/chatbot" component={Chatbot} />
+          <Route path="/practice-test" component={PracticeTest} />
           <Route path="/daily-test" component={DailyTest} />
           <Route path="/weekly-test" component={WeeklyTest} />
           <Route component={NotFound} />
