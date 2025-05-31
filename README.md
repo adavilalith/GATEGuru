@@ -86,4 +86,3 @@ Feel free to open issues or pull requests to improve GATEGuru! Whether it’s a 
 - links to documentation or a blog post
 
 I can also auto-generate a `LICENSE` or `package.json` if needed.
-```
