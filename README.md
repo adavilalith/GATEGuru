@@ -21,6 +21,7 @@ It provides **accurate, exam-oriented, and interactive guidance** across the ent
 
 ---
 
+
 ## 🖼️ Demo
 
 uploading video in a min
@@ -62,7 +63,7 @@ uploading video in a min
    ```bash
    npm run dev
 
-
+### note: I have given my personal gemini api, it will expire in two days (2 june 2025)
 
 ## 📄 License
 
