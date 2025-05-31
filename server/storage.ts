@@ -171,16 +171,28 @@ export class MongoStorage implements Storage {
 
   async getTestQuestions(
     testType: string,
-    limit: number = 10,
+    limit: number = 45,
   ): Promise<TestQuestion[]> {
-    let question_type="MCQ";
-    const questions = await database
+    let questions=[];
+    if(testType=="*"){
+     questions = await database
       .collection("questions")
       .aggregate([
-        { $sample: { size: limit } }
+        { $sample: { size: limit } }        
       ])
       .toArray();
-    console.log(questions)
+    }else{ 
+      questions = await database
+      .collection("questions")
+      .aggregate([
+        { $match: { topics: testType } }, 
+        { $sample: { size: limit } }   
+      ])
+      .toArray();
+    }
+
+    
+  
     return questions.map((question) => ({
       id: question.numericId,
       type: question.question_type,

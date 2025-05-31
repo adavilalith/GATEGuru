@@ -119,24 +119,44 @@ class MongoDatabase {
         await collection.insertMany([
           {
             numericId: 1,
-            title: "GATE 2025 Registration Opens",
+            title: "GATE 2026 Registration to Begin in August 2025",
             summary:
-              "Registration for GATE Computer Science 2025 is now open. Don't miss the deadline!",
+              "The registration process for GATE 2026 is expected to commence in the last week of August 2025. Candidates should apply before the deadline to avoid late fees.",
             category: "Exam Updates",
             imageUrl:
               "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
-            publishedAt: new Date(Date.now() - 2 * 60 * 60 * 1000),
+            publishedAt: new Date("2025-05-31T00:00:00Z"),
           },
           {
             numericId: 2,
-            title: "New Algorithm Practice Sets Available",
+            title: "IIT Guwahati to Organize GATE 2026",
             summary:
-              "Updated practice questions for dynamic programming and graph algorithms now available in the practice section.",
-            category: "Study Materials",
+              "IIT Guwahati has been announced as the organizing institute for GATE 2026. The exam will be conducted for 30 subjects, including Computer Science and Information Technology.",
+            category: "Exam Updates",
             imageUrl:
               "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
-            publishedAt: new Date(Date.now() - 24 * 60 * 60 * 1000),
+            publishedAt: new Date("2025-05-31T00:00:00Z"),
           },
+          {
+            numericId: 3,
+            title: "GATE 2026 Exam Scheduled for February 2026",
+            summary:
+              "The GATE 2026 examination is scheduled to be held in February 2026 over two weekends. The exact dates will be announced in July 2025.",
+            category: "Exam Updates",
+            imageUrl:
+              "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
+            publishedAt: new Date("2025-05-31T00:00:00Z"),
+          },
+          {
+            numericId: 4,
+            title: "GATE 2026 CSIT Syllabus Released",
+            summary:
+              "The official syllabus for GATE 2026 Computer Science and Information Technology has been released. It includes topics like Engineering Mathematics, Digital Logic, Algorithms, and more.",
+            category: "Study Materials",
+            imageUrl:
+              "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
+            publishedAt: new Date("2025-05-31T00:00:00Z"),
+          },  
         ]);
         break;
 

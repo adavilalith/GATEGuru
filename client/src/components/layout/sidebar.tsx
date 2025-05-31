@@ -41,8 +41,8 @@ export default function Sidebar() {
             <BookOpen className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-semibold text-slate-800">GATE CSIT</h1>
-            <p className="text-sm text-slate-500">Study Assistant</p>
+            <h1 className="text-xl font-semibold text-slate-800">GateGuru</h1>
+            <p className="text-sm text-slate-500">AI Study Assistant</p>
           </div>
         </div>
       </div>

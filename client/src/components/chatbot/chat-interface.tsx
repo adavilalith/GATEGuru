@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, Bot, User, Image as ImageIcon } from "lucide-react";
 import { api } from "@/lib/api";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"; 
 import type { ChatMessage } from "@shared/schema";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -35,7 +35,7 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
       setNewMessage("");
       setSelectedImage(null);
       setUploadedImageUrl(null)
-    
+
     },
     onError: () => {
       toast({
@@ -60,9 +60,9 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
   });
   const handleSendMessage = () => {
     if (!newMessage.trim() && !selectedImage) return;
-      
+
     console.log("###",uploadedImageUrl)
-    
+
     if(uploadedImageUrl){
       console.log("%%%",uploadedImageUrl)
       sendMessageMutation.mutate({
@@ -82,7 +82,7 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
       });
     }
 
-    
+
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -110,8 +110,9 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
   }
 
   return (
-    <Card className="h-[600px] flex flex-col">
-      <CardContent className="flex-1 p-0 flex flex-col">
+    <Card className="h-[85vh] flex flex-col">
+      {/* Changed CardContent to flex-col and added h-full to occupy full height */}
+      <CardContent className="flex-1 p-0 flex flex-col h-full">
         <div className="p-6 border-b border-slate-200">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
@@ -124,7 +125,8 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
           </div>
         </div>
 
-        <ScrollArea className="flex-1 p-6">
+        {/* ScrollArea now flex-grow to take up available space */}
+        <ScrollArea className="flex-grow p-6"> {/* Changed flex-1 to flex-grow */}
           <div className="space-y-4">
             {chatHistory?.length === 0 && (
               <div className="text-center text-slate-500 py-8">
@@ -132,7 +134,7 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
                 <p>Start a conversation! Ask me about your studies, tests, or any topic you need help with.</p>
               </div>
             )}
-            
+
             {chatHistory?.map((chat) => (
               <div key={chat.id} className="space-y-3">
                 {/* User message */}
@@ -148,7 +150,7 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Bot response */}
                 <div className="flex justify-start">
                   <div className="flex items-start space-x-2 max-w-[80%]">
@@ -156,7 +158,7 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
                       <Bot className="w-4 h-4 text-green-600" />
                     </div>
                     <div className="bg-slate-100 rounded-lg p-3">
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{chat.response}</ReactMarkdown>   
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{chat.response}</ReactMarkdown>
                       {/* You might display bot-generated images here too */}
                     </div>
                   </div>
@@ -166,7 +168,8 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
           </div>
         </ScrollArea>
 
-        <div className="p-6 border-t border-slate-200">
+        {/* Search input div with flex-shrink-0 to keep it from shrinking */}
+        <div className="p-6 border-t border-slate-200 flex-shrink-0">
           {selectedImage && (
             <div className="flex items-center space-x-2 mb-2 p-2 bg-slate-100 rounded-md">
               <span className="text-sm text-slate-700">{selectedImage.name}</span>
@@ -188,10 +191,10 @@ export default function ChatInterface({chatId}: ChatInterfaceProps) {
                 onChange={handleImageChange}
                 hidden
                 />
-            
-            
+
+
             <label htmlFor="image-upload123" onClick={()=>document.getElementById("image-upload123")?.click()}>
-              
+
               <Button variant="outline"  size="icon" className="cursor-pointer">
                 <ImageIcon className="w-4 h-4" />
               </Button>

@@ -43,7 +43,7 @@ const system_prompt =`You are an expert AI-powered study buddy specializing in t
 `
 // Define the model globally
 const model: GenerativeModel = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash-8b", // Or "gemini-1.5-pro", or "gemini-pro-vision"
+  model: "gemini-1.5-flash", // Or "gemini-1.5-pro", or "gemini-pro-vision"
   systemInstruction: {
     role: "model",
     parts: [
@@ -80,7 +80,6 @@ async function fileToGenerativePart(imagePath: string): Promise<Part | null> {
       return null;
     }
 
-    // Ensure the MIME type is an image type supported by Gemini
     if (!mimeType.startsWith('image/')) {
         console.warn(`File ${imagePath} has unsupported MIME type ${mimeType}. Skipping image.`);
         return null;
@@ -172,6 +171,17 @@ export async function generateGeminiResponseWithHistory(
     // 2. Format the past messages into Gemini's expected history format
     // This is now an async call because it reads files
     const history = await formatHistoryForGemini(pastMessages);
+    let prev_data="previous chat logs"
+    let i=0
+    for(const msg of pastMessages){
+      if(i>10){
+        break
+      }
+      prev_data+="#"+msg.message+"#"+msg.response
+      i++
+    }
+
+    console.log(history)
 
     // 3. Start a new chat session with the loaded history
     const chat: ChatSession = model.startChat({
@@ -180,7 +190,7 @@ export async function generateGeminiResponseWithHistory(
     });
 
     // 4. Send the current multimodal prompt.
-    const result = await chat.sendMessage(currentUserPromptParts); // Pass the array of Parts
+    const result = await chat.sendMessage(`${prev_data} the prev context should be hidden from user current prompt ${currentUserPromptParts}`); // Pass the array of Parts
     const response = await result.response;
     const text = response.text();
 

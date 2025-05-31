@@ -115,8 +115,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/test/:testType/questions", async (req, res) => {
     try {
       const testType = req.params.testType;
-      const limit = parseInt(req.query.limit as string) || 10;
-      const questions = await storage.getTestQuestions("daily", limit);
+      const limit = parseInt(req.query.limit as string) || 45;
+      const questions = await storage.getTestQuestions(testType, limit);
       res.json(questions);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch test questions" });
@@ -145,7 +145,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Chat routes
   app.get("/api/chat/history", async (req, res) => {
-    console.log("hi from chat history")
 
     try {
       const userId = parseInt(req.query.userId as string);
@@ -161,21 +160,47 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // --- THIS IS THE CORRECTLY SEPARATED CHAT MESSAGE ROUTE ---
   app.post("/api/chat", async (req, res) => {
     try {
-      const { chatId, userId, message, uploadedImageUrl } = req.body;
-
+      let { chatId, userId, message, uploadedImageUrl } = req.body;
       const history = await storage.getChatHistory(userId, chatId);
 
-      const response = await generateGeminiResponseWithHistory(message, history,uploadedImageUrl);
+      if(message.substring(0,4)=="6336"){
+        const parts = message.split("6336");
+        const question = parts[2];
+        const answer = parts[4];
 
-      const chatData = insertChatMessageSchema.parse({
-        chatId,
-        userId,
-        message,
-        response,
-      });
+        message = `explaining Question: ${question}`;
+        const prompt = `Walk me through a step-by-step solution to the problem presented below.
 
-      const chatMessage = await storage.createChatMessage(chatData);
-      res.status(201).json(chatMessage);
+                          Here's the structure I'm looking for:
+                          1.  **Introduction**: Briefly state the problem and the overall approach.
+                          2.  **Step-by-Step Solution**:
+                              * **Step 1**: [Action] - [Explanation/Reasoning]
+                              * **Step 2**: [Action] - [Explanation/Reasoning]
+                              * ... (continue for all necessary steps)
+                          3.  **Conclusion**: Summarize the key takeaway or verify the answer.
+
+                          Question: ${question}
+                          Answer: ${answer}`
+        const response = await generateGeminiResponseWithHistory(prompt, history,uploadedImageUrl);
+        const chatData = insertChatMessageSchema.parse({
+          chatId,
+          userId,
+          message,
+          response,
+        });
+        const chatMessage = await storage.createChatMessage(chatData);
+        res.status(201).json(chatMessage);
+      }else{
+        const response = await generateGeminiResponseWithHistory(message, history,uploadedImageUrl);
+        const chatData = insertChatMessageSchema.parse({
+          chatId,
+          userId,
+          message,
+          response,
+        });
+        const chatMessage = await storage.createChatMessage(chatData);
+        res.status(201).json(chatMessage);
+      }
     } catch (error) {
       res.status(400).json({ message: "Invalid chat message data" });
     }
