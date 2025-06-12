@@ -11,6 +11,10 @@ It provides **accurate, exam-oriented, and interactive guidance** across the ent
 **GATEGuru** was awarded **1st Place** at the prestigious **HACKIT-ON 2025** hackathon, held on May 30–31, 2025. Organized by **IEEE MVSR CS** in collaboration with **Algorithm Aliens**, the event recognized projects that demonstrated outstanding innovation, technical depth, and problem-solving impact. GATEGuru stood out for its real-world utility and effective use of AI to support exam preparation.
 
 
+[![View Certificate](hackathon_documents/certificate_preview.png)](hackathon_documents/Adavi%20Surya%20Lalith%20Shourie%20.pdf)
+
+
+
 ## 🚀 Features
 
 - 🧠 **AI Expert Assistant** trained on GATE CS concepts
