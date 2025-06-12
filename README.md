@@ -5,7 +5,11 @@ GATEGuru is a web app powered by **Gemini 1.5 Flash** that helps students prepar
 
 It provides **accurate, exam-oriented, and interactive guidance** across the entire GATE CS syllabus, including theory explanation, problem-solving, and concept reinforcement.
 
----
+
+## 🏆 Hackathon Victory
+
+**GATEGuru** was awarded **1st Place** at the prestigious **HACKIT-ON 2025** hackathon, held on May 30–31, 2025. Organized by **IEEE MVSR CS** in collaboration with **Algorithm Aliens**, the event recognized projects that demonstrated outstanding innovation, technical depth, and problem-solving impact. GATEGuru stood out for its real-world utility and effective use of AI to support exam preparation.
+
 
 ## 🚀 Features
 
