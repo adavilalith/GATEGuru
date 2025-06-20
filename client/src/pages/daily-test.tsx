@@ -21,7 +21,7 @@ export default function DailyTest() {
 
   const { data: questions, isLoading } = useQuery<TestQuestion[]>({
     queryKey: ["test-questions", "daily"],
-    queryFn: () => api.test.getTestQuestions('*'),
+    queryFn: () => api.test.getTestQuestions("*",10),
     enabled: isTestStarted,
   });
   const submitTestMutation = useMutation({

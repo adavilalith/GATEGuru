@@ -21,7 +21,7 @@ export default function WeeklyTest() {
 
   const { data: questions, isLoading } = useQuery<TestQuestion[]>({
     queryKey: ["test-questions", "weekly"],
-    queryFn: () => api.test.getTestQuestions("*"),
+    queryFn: () => api.test.getTestQuestions("*",45),
     enabled: isTestStarted,
   });
 
