@@ -23,7 +23,7 @@ export default function Dashboard() {
           
           <div className="space-y-6">
             <TodoPanel />
-            <QuickStats />
+            {/* <QuickStats /> */}
           </div>
         </div>
         

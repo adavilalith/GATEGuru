@@ -32,10 +32,10 @@ export default function QuickActions() {
       hoverBg: "hover:bg-green-100",
     },
     {
-      title: "Progress",
-      description: "Track your learning journey",
+      title: "GATE CS Syllabus",
+      description: "Checkout the current GATE CS syllabus",
       icon: BarChart2,
-      href: "/dashboard",
+      href: "https://gate2024.iisc.ac.in/wp-content/uploads/2023/07/cs.pdf",
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600",
       hoverBg: "hover:bg-purple-100",
@@ -45,22 +45,32 @@ export default function QuickActions() {
   return (
     <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {actions.map((action) => {
-        const Icon = action.icon;
-        
-        return (
-          <Link key={action.href} href={action.href}>
-            <Card className="hover:shadow-md hover:border-primary/20 transition-all duration-200 cursor-pointer group">
-              <CardContent className="p-6">
-                <div className={`w-12 h-12 ${action.bgColor} rounded-lg flex items-center justify-center mb-4 group-hover:${action.hoverBg} transition-colors duration-200`}>
-                  <Icon className={`w-6 h-6 ${action.iconColor}`} />
-                </div>
-                <h3 className="font-semibold text-slate-800 mb-2">{action.title}</h3>
-                <p className="text-sm text-slate-600">{action.description}</p>
-              </CardContent>
-            </Card>
-          </Link>
-        );
-      })}
+  const Icon = action.icon;
+  const isExternal = action.href.startsWith("http");
+
+  const card = (
+    <Card className="hover:shadow-md hover:border-primary/20 transition-all duration-200 cursor-pointer group">
+      <CardContent className="p-6">
+        <div className={`w-12 h-12 ${action.bgColor} rounded-lg flex items-center justify-center mb-4 group-hover:${action.hoverBg} transition-colors duration-200`}>
+          <Icon className={`w-6 h-6 ${action.iconColor}`} />
+        </div>
+        <h3 className="font-semibold text-slate-800 mb-2">{action.title}</h3>
+        <p className="text-sm text-slate-600">{action.description}</p>
+      </CardContent>
+    </Card>
+  );
+
+  return isExternal ? (
+    <a key={action.href} href={action.href} target="_blank" rel="noopener noreferrer">
+      {card}
+    </a>
+  ) : (
+    <Link key={action.href} href={action.href}>
+      {card}
+    </Link>
+  );
+})}
+
     </div>
   );
 }
